@@ -25,10 +25,20 @@
 // -----------------------------------------------------------------
 
 // ********************REDUCE***********************
+// to sum
+const arr = [11, 2, 3]
+// const sum = arr.reduce((acc, curr) => {
+//     acc += curr;
+//     return acc
+// }, 0)
+// console.log(sum);
 
-const arr = [1, 2, 3]
-const sum = arr.reduce((acc, curr) => {
-    acc += curr;
-    return acc
-}, 0)
-console.log(sum);
+//to max
+
+const max = arr.reduce((acc, curr) => {
+    if (curr > acc)
+        acc = curr
+
+    return acc;
+}, arr[0])
+console.log(max);
