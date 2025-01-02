@@ -16,26 +16,42 @@
 // }
 // getData()
 // console.log("outside function");
+// -----------------------------------------------------
+// const p1 = new Promise(resolve =>
+//   setTimeout(() => {
+//     resolve('promise 1 time 20 sec')
+//   }, 20000)
+// )
 
-const p1 = new Promise(resolve =>
-  setTimeout(() => {
-    resolve('promise 1 time 20 sec')
-  }, 20000)
-)
+// const p2 = new Promise(resolve =>
+//   setTimeout(() => {
+//     resolve('promise 1 time 10 sec')
+//   }, 10000)
+// )
+// async function getData () {
+//   console.log('inside getdata')
 
-const p2 = new Promise(resolve =>
-  setTimeout(() => {
-    resolve('promise 1 time 10 sec')
-  }, 10000)
-)
+//   const r1 = await p1
+//   console.log(r1)
+
+//   const r2 = await p2
+//   console.log(r2)
+// }
+
+// getData()
+// -----------------------------------------------------
+const api = 'https://jsonplaceholder.typicode.com/todos?10'
+
 async function getData () {
-  console.log('inside getdata')
-
-  const r1 = await p1
-  console.log(r1)
-
-  const r2 = await p2
-  console.log(r2)
+  //   const data = await fetch(api)
+  //   const json = await data.json()
+  //   console.log(json)
+  fetch(api)
+    .then(data => {
+      return data.json()
+    })
+    .then(json => {
+      console.log(json)
+    })
 }
-
 getData()
